@@ -36,7 +36,7 @@ setup(
             "hyhyhy = hyhyhy:main",
         ]
     },
-    install_requires=['rjsmin', 'rcssmin', 'markdown', 'jinja2'],
+    install_requires=['rjsmin', 'rcssmin', 'markdown', 'jinja2', 'pypandoc'],
     author='Maciej A. Czyzewski',
     author_email='maciejanthonyczyzewski@gmail.com',
     description=('Presentation nano-framework'),
