@@ -85,7 +85,17 @@ def get_sections(a=[], b=u'', c=u''):
     for i in sections:
         print prf(u'OK'), u"Parsing file", i, u"..."
         c = (i.split(u'.')[-2]).split(u'/')[-1]
-        if i.split(u'.')[-1] == u"md":
+        if i.split(u'.')[-1] == u"rst":
+            from pypandoc import convert
+            try:
+                read_rst = convert(i, 'md')
+            except OSError:
+                print prf(u'FAIL'), u"You probably don't have pandoc installed.", u"!"
+                print "\tSee: %s" % ("http://johnmacfarlane.net/pandoc/installing.html")
+                print "Build failed. Exiting"
+                sys.exit(1)
+            b =  unicode(markdown.markdown(read_rst))
+        elif i.split(u'.')[-1] == u"md":
             b = unicode(markdown.markdown(open(i, u'r').read()))
         elif i.split(u'.')[-1] == u"html":
             b = unicode(open(i, u'r').read())
