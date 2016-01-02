@@ -196,7 +196,7 @@ The goal was to make package that will speed up work on own presentation.Please 
 
 ## License
 
-See LICENSE file in this repository.
+hyhyhy is available under the [MIT License](http://opensource.org/licenses/MIT), see the `LICENSE.txt` file for more information.
 
 ## Credits
 
